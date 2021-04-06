@@ -48,6 +48,7 @@ brew cask install dropbox
 brew cask install font-fira-code
 brew cask install font-hack-nerd-font
 brew cask install font-sourcecodepro-nerd-font
+brew cask install gitify
 brew cask install grandperspective
 brew cask install imageoptim
 brew cask install iterm2
