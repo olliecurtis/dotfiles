@@ -80,8 +80,28 @@ source /usr/local/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 source $HOME/.bash_profile
 
+# Python setup
+export PATH="$HOME/.pyenv/bin:$PATH"
+export PATH="/usr/local/bin:$PATH"
+# export PATH="$(pyenv root)/libexec/pyenv:$PATH"
+eval "$(pyenv init -)"
+eval "$(pyenv virtualenv-init -)"
+# export PATH=/opt/local/bin:/opt/local/sbin:$PATH
+
+# Python virtualenv setup
+#export WORKON_HOME=~/Envs
+#source /usr/local/bin/virtualenvwrapper.sh
+
+
+export LDFLAGS="-L/usr/local/opt/zlib/lib -L/usr/local/opt/bzip2/lib"
+export CPPFLAGS="-I/usr/local/opt/zlib/include -I/usr/local/opt/bzip2/include"
+
+export PATH="/usr/local/sbin:$PATH"
+export GPG_TTY=$(tty)
+
+
 # Command execution time stamp shown in the history command output.
-HIST_STAMPS="mm/dd/yyyy"
+HIST_STAMPS="dd/mm/yyyy"
 
 # ALIAS
 alias brupdate='brew update && brew outdated && brew upgrade && brew outdated --cask && brew upgrade --cask'
@@ -97,7 +117,7 @@ alias weather-home='curl wttr.in/London?1F'
 alias android-shake='$ANDROID_SDK_ROOT/platform-tools/adb shell input keyevent 82'
 alias android-shake-twice='android-shake && sleep 3 && android-shake'
 
-alias run-android='$ANDROID_SDK_ROOT/emulator/emulator -avd Pixel_3_API_28'
+alias run-android='$ANDROID_SDK_ROOT/emulator/emulator -avd pixel'
 alias run-ios='open /Applications/Xcode.app/Contents/Developer/Applications/Simulator.app'
 
 # =========================================================
@@ -125,19 +145,8 @@ alias docker-start-all='docker start $(docker ps -aq)'
 # ===========================================================
 
 # Startup to run
-archey -o
 echo 'Your current operating temperature is:' 
 osx_temp
-
-# The next line updates PATH for the Google Cloud SDK.
-if [ -f '/Users/olivercurtis/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/olivercurtis/google-cloud-sdk/path.zsh.inc'; fi
-
-# The next line enables shell command completion for gcloud.
-if [ -f '/Users/olivercurtis/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/olivercurtis/google-cloud-sdk/completion.zsh.inc'; fi
-
-# Python virtualenv setup
-#export WORKON_HOME=~/Envs
-#source /usr/local/bin/virtualenvwrapper.sh
 
 # Setup nvm
 export NVM_DIR="$HOME/.nvm"
@@ -157,3 +166,11 @@ load-nvmrc() {
 }
 npm-set-normal-registry
 add-zsh-hook chpwd load-nvmrc
+load-nvmrc
+
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f '/Users/olivercurtis/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/olivercurtis/google-cloud-sdk/path.zsh.inc'; fi
+
+# The next line enables shell command completion for gcloud.
+if [ -f '/Users/olivercurtis/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/olivercurtis/google-cloud-sdk/completion.zsh.inc'; fi
+
