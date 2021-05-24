@@ -1,6 +1,13 @@
 brew update
+brew tap adoptopenjdk/openjdk
+brew tap drone/drone
+brew tap github/gh
+brew tap homebrew/bundle
 brew tap homebrew/cask
 brew tap homebrew/cask-fonts
+brew tap homebrew/core
+brew tap homebrew/services
+brew tap mshell/mshell, git@github.skyscannertools.net:mshell/homebrew-mshell.git
 
 brew install adb
 brew install archey
@@ -11,13 +18,19 @@ brew install drone
 brew install git
 brew install git-lfs
 brew install github/gh/gh
-brew install gpg
+brew install gnupg gnupg2
+brew install gpg gpg2
 brew install hugo
+brew install jq
 brew install kubernetes-cli
 brew install kubernetes-helm
 brew install kryptco/tap/kr
 brew install midnight-commander
 brew install mitmproxy
+brew install mshell/mshell/artifactory-cli-login
+brew install mshell/mshell/mshell-cut
+brew install mshell/mshell/mshell-tools
+brew install mshell/mshell/protovend
 brew install neovim
 brew install node
 brew install openssl
@@ -25,41 +38,51 @@ brew install pyenv
 brew install pyenv-virtualenv
 brew install pyenv-root
 brew install python
+brew install ruby-build
+brew install rbenv
 brew install redis
 brew install skyscanner-bundle
 brew install stern
-brew cask install osxfuse # This is a requirement for telepresence so is required first
+brew install --cask osxfuse # This is a requirement for telepresence so is required first
 brew install datawire/blackbird/telepresence
 brew install watchman
+brew install wget
 brew install yarn
 brew install zsh-autosuggestions
 brew install zsh-syntax-highlighting
 
 # Install casks
-brew cask install aerial
-brew cask install alfred
-brew cask install android-platform-tools
-brew cask install android-studio
-brew cask install atom
-brew cask install authy
-brew cask install bitbar
-brew cask install colour-contrast-analyser
-brew cask install dropbox
-brew cask install font-fira-code
-brew cask install font-hack-nerd-font
-brew cask install font-sourcecodepro-nerd-font
-brew cask install gitify
-brew cask install grandperspective
-brew cask install imageoptim
-brew cask install iterm2
-brew cask install minikube
-brew cask install mongodb
-brew cask install postman
-brew cask install sketch
-brew cask install slack
-brew cask install sourcetree
-brew cask install spotify
-brew cask install vlc
+brew install --cask aerial
+brew install --cask alfred
+brew install --cask adoptopenjdk/openjdk/adoptopenjdk8
+brew install --cask android-platform-tools
+brew install --cask android-studio
+brew install --cask atom
+brew install --cask authy
+brew install --cask bitbar
+brew install --cask colour-contrast-analyser
+brew install --cask dropbox
+brew install --cask figma
+brew install --cask font-fira-code
+brew install --cask font-hack-nerd-font
+brew install --cask font-sourcecodepro-nerd-font
+brew install --cask gpg-suite
+brew install --cask gitify
+brew install --cask grandperspective
+brew install --cask homebrew/cask-versions/firefox-developer-edition
+brew install --cask imageoptim
+brew install --cask iterm2
+brew install --cask minikube
+brew install --cask mongodb
+brew install --cask karabiner-elements
+brew install --cask postman
+brew install --cask sketch
+brew install --cask slack
+brew install --cask sourcetree
+brew install --cask spotify
+brew install --cask virtualbox
+brew install --cask virtualbox-extension-pack
+brew install --cask vlc
 
 # Extra utilities
 gem install colorls
