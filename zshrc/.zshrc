@@ -87,8 +87,8 @@ HIST_STAMPS="mm/dd/yyyy"
 
 # ALIAS
 alias brupdate='brew update && brew outdated && brew upgrade && brew outdated --cask && brew upgrade --cask'
-alias cat='bat'
-alias ls='exa'
+# alias cat='bat'
+# alias ls='exa'
 alias osx_temp="/Users/olivercurtis/Downloads/osx-cpu-temp/osx-cpu-temp"
 alias weather-home='curl wttr.in/London?1F'
 alias disable-dnd='defaults -currentHost write ~/Library/Preferences/ByHost/com.apple.notificationcenterui doNotDisturb -boolean false && killall NotificationCenter'
@@ -165,8 +165,10 @@ alias skyscanner-app-nuke='skyreps && sudo rm -rf skyscanner-app/'
 # ===========================================================
 
 # Startup to run
-echo 'Your current operating temperature is:' 
-osx_temp
+# echo 'Your current operating temperature is:' 
+# osx_temp
+
+export GPG_TTY=$(tty)
 
 # The next line updates PATH for the Google Cloud SDK.
 # if [ -f '/Users/olivercurtis/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/olivercurtis/google-cloud-sdk/path.zsh.inc'; fi
@@ -177,19 +179,12 @@ osx_temp
 # Python virtualenv setup
 #export PYENV_ROOT="$HOME/.pyenv"
 #export PATH="$PYENV_ROOT/bin:$PATH"
-#eval "$(pyenv init --path)"
-
-#eval "$(pyenv init -)"
-#eval "$(pyenv virtualenv-init -)"
-
-export PATH="$HOME/.pyenv/bin:$PATH"
-export PATH="/usr/local/bin:$PATH"
 
 eval "$(pyenv init --path)"
 eval "$(pyenv init -)"
-eval "$(pyenv virtualenv-init -)"
-export LDFLAGS="-L/usr/local/opt/zlib/lib -L/usr/local/opt/bzip2/lib"
-export CPPFLAGS="-I/usr/local/opt/zlib/include -I/usr/local/opt/bzip2/include"
+# eval "$(pyenv virtualenv-init -)"
+# export LDFLAGS="-L/usr/local/opt/zlib/lib -L/usr/local/opt/bzip2/lib"
+# export CPPFLAGS="-I/usr/local/opt/zlib/include -I/usr/local/opt/bzip2/include"
 
 # Setup nvm
 export NVM_DIR="$HOME/.nvm"
@@ -220,8 +215,6 @@ load-nvmrc
 export PATH="~/Library/Android/sdk/tools:$PATH"
 export PATH="~/Library/Android/sdk/platform-tools:$PATH"
 
-# Setting Java home path to be the bundled version in AS to ensure compatiblity for Android Dev
-export JAVA_HOME="/Applications/Android Studio.app/Contents/jre/Contents/Home"
 export PATH="$PATH:/Users/olivercurtis/Library/Python/3.8/bin"
 
 # Add RVM to PATH for scripting. Make sure this is the last PATH variable change.

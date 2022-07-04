@@ -15,7 +15,8 @@ brew install artifactory-cli-login
 brew install awscli
 brew install bat
 brew install docker
-brew install drone
+brew install docker-credential-helper-ecr
+brew install drone@0.8
 brew install exa
 brew install git
 brew install git-lfs
@@ -36,6 +37,7 @@ brew install mshell/mshell/protovend
 brew install neovim
 brew install node
 brew install openssl
+brew install pinentry-mac
 brew install pyenv
 brew install pyenv-virtualenv
 brew install pyenv-root
@@ -52,6 +54,7 @@ brew install watchman
 brew install wget
 brew install xcodegen
 brew install yarn
+brew install zlib
 brew install zsh-autosuggestions
 brew install zsh-syntax-highlighting
 
