@@ -59,10 +59,6 @@ POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(os_icon context dir vcs)
 POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(battery time)
 POWERLEVEL9K_PROMPT_ADD_NEWLINE=true
 
-# Setting for nvim
-POWERLEVEL9K_NVM_BACKGROUND='28'
-POWERLEVEL9K_NVM_FOREGROUND='15'
-
 # Uncomment the following line to use hyphen-insensitive completion.
 # Case-sensitive completion must be off. _ and - will be interchangeable.
 # HYPHEN_INSENSITIVE="true"
@@ -168,7 +164,9 @@ alias skyscanner-app-nuke='skyreps && sudo rm -rf skyscanner-app/'
 # echo 'Your current operating temperature is:' 
 # osx_temp
 
-export GPG_TTY=$(tty)
+export GPG_AGENT_INFO
+GPG_TTY=$(tty)
+export GPG_TTY
 
 # The next line updates PATH for the Google Cloud SDK.
 # if [ -f '/Users/olivercurtis/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/olivercurtis/google-cloud-sdk/path.zsh.inc'; fi
@@ -207,13 +205,13 @@ load-nvmrc() {
   fi
 }
 
-npm-set-normal-registry
 add-zsh-hook chpwd load-nvmrc
-
 load-nvmrc
+npm-set-normal-registry
 
 export PATH="~/Library/Android/sdk/tools:$PATH"
 export PATH="~/Library/Android/sdk/platform-tools:$PATH"
+export JAVA_HOME="/Applications/Android Studio.app/Contents/jbr/Contents/Home"
 
 export PATH="$PATH:/Users/olivercurtis/Library/Python/3.8/bin"
 
@@ -221,4 +219,3 @@ export PATH="$PATH:/Users/olivercurtis/Library/Python/3.8/bin"
 export PATH="$PATH:$HOME/.rvm/bin"
 
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
-
