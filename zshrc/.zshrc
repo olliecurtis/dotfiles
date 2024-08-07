@@ -59,6 +59,10 @@ POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(os_icon context dir vcs)
 POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(battery time)
 POWERLEVEL9K_PROMPT_ADD_NEWLINE=true
 
+# Setting for nvim
+POWERLEVEL9K_NVM_BACKGROUND='28'
+POWERLEVEL9K_NVM_FOREGROUND='15'
+
 # Uncomment the following line to use hyphen-insensitive completion.
 # Case-sensitive completion must be off. _ and - will be interchangeable.
 # HYPHEN_INSENSITIVE="true"
@@ -83,11 +87,12 @@ HIST_STAMPS="mm/dd/yyyy"
 
 # ALIAS
 alias brupdate='brew update && brew outdated && brew upgrade && brew outdated --cask && brew upgrade --cask'
-# alias cat='bat'
-# alias ls='exa'
+alias cat='bat'
+alias ls='exa'
 alias osx_temp="/Users/olivercurtis/Downloads/osx-cpu-temp/osx-cpu-temp"
-alias weather-home='curl wttr.in/London?1F'
+alias weather-home='curl "wttr.in/London?1F"'
 alias disable-dnd='defaults -currentHost write ~/Library/Preferences/ByHost/com.apple.notificationcenterui doNotDisturb -boolean false && killall NotificationCenter'
+alias lvim="/Users/olivercurtis/.local/bin/lvim"
 
 # ======================= MOBILE DEV ======================
 
@@ -105,6 +110,7 @@ alias run-ios='open /Applications/Xcode.app/Contents/Developer/Applications/Simu
 alias clean-install='npm run clean && npm install' # For use with Backpack projects
 alias npm-check-unused-dependencies='npm install depcheck -g && depcheck'
 alias npm-set-normal-registry='npm config set registry https://registry.npmjs.org/'
+alias clean-modules='find . -name 'node_modules' -type d -prune -print -exec rm -rf '{}' \;'
 
 # ============================================================
 
@@ -212,10 +218,9 @@ npm-set-normal-registry
 export PATH="~/Library/Android/sdk/tools:$PATH"
 export PATH="~/Library/Android/sdk/platform-tools:$PATH"
 export JAVA_HOME="/Applications/Android Studio.app/Contents/jbr/Contents/Home"
+# export JAVA_HOME="/opt/homebrew/Cellar/openjdk/21.0.2/libexec/openjdk.jdk/Contents/Home"
 
 export PATH="$PATH:/Users/olivercurtis/Library/Python/3.8/bin"
 
-# Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
-export PATH="$PATH:$HOME/.rvm/bin"
 
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
+eval "$(rbenv init - zsh)"
