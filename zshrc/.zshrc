@@ -88,12 +88,11 @@ HIST_STAMPS="mm/dd/yyyy"
 # ALIAS
 alias brupdate='brew update && brew outdated && brew upgrade && brew outdated --cask && brew upgrade --cask'
 alias cat='bat'
-alias ls='exa'
 alias osx_temp="/Users/olivercurtis/Downloads/osx-cpu-temp/osx-cpu-temp"
 alias weather-home='curl "wttr.in/London?1F"'
 alias disable-dnd='defaults -currentHost write ~/Library/Preferences/ByHost/com.apple.notificationcenterui doNotDisturb -boolean false && killall NotificationCenter'
 alias lvim="/Users/olivercurtis/.local/bin/lvim"
-
+alias nom='npm'
 # ======================= MOBILE DEV ======================
 
 alias adb='$ANDROID_HOME/platform-tools/adb'
@@ -107,7 +106,7 @@ alias run-ios='open /Applications/Xcode.app/Contents/Developer/Applications/Simu
 
 # ========================== NPM ==========================
 
-alias clean-install='npm run clean && npm install' # For use with Backpack projects
+alias clean-install='npm run clean && npm install' # For use with any project
 alias npm-check-unused-dependencies='npm install depcheck -g && depcheck'
 alias npm-set-normal-registry='npm config set registry https://registry.npmjs.org/'
 alias clean-modules='find . -name 'node_modules' -type d -prune -print -exec rm -rf '{}' \;'
@@ -139,12 +138,6 @@ alias update-bpk-deps='npx npm-check-updates -u "/^bpk-.*$/"'
 alias backpack-foundations='~/Documents/Backpack/backpack-foundations'
 alias backpack-foundations-nuke='backpack && sudo rm -rf backpack-foundations/ && git clone --recursive git@github.com:Skyscanner/backpack-foundations.git && backpack-foundations'
 
-alias backpack-react='~/Documents/Backpack/backpack-react-native'
-alias backpack-rn-nuke='backpack && sudo rm -rf backpack-react-native/ && git clone --recursive git@github.com:Skyscanner/backpack-react-native.git && backpack-react'
-
-alias backpack-docs='~/Documents/Backpack/backpack-docs'
-alias backpack-docs-nuke='backpack && sudo rm -rf backpack-docs/ && git clone --recursive git@github.com:Skyscanner/backpack-docs.git && backpack-docs'
-
 alias backpack-android='~/Documents/Backpack/backpack-android'
 alias backpack-android-nuke='backpack && sudo rm -rf backpack-android/ && git clone --recursive git@github.com:Skyscanner/backpack-android.git && backpack-android'
 
@@ -155,15 +148,6 @@ alias brs='backpack && cd backpack-react-scripts'
 alias brs-nuke='backpack && sudo rm -rf backpack-react-scripts/ && git clone --recursive git@github.com:Skyscanner/backpack-react-scripts.git'
 alias brs-setup='brs && (cd packages/react-error-overlay/ && npm i) && (cd packages/react-scripts/ && npm i) && npm i'
 
-alias fullstack='skyreps && cd full-stack-recruitment-test/'
-alias fullstack-run='fullstack && npm run client & node server/src/server.js'
-alias fullstack-setup='fullstack && npm ci'
-alias fullstack-nuke='skyreps && sudo rm -rf full-stack-recruitment-test/ && git clone git@github.com:Skyscanner/full-stack-recruitment-test.git'
-alias fs-reviews-nuke='~/Documents && sudo rm -rf fs-reviews/ && mkdir fs-reviews'
-
-alias skyreps='~/Documents/Skyscanner'
-alias skyscanner-app='skyreps && cd skyscanner-app/'
-alias skyscanner-app-nuke='skyreps && sudo rm -rf skyscanner-app/'
 # ===========================================================
 
 # Startup to run
@@ -213,7 +197,6 @@ load-nvmrc() {
 
 add-zsh-hook chpwd load-nvmrc
 load-nvmrc
-npm-set-normal-registry
 
 export PATH="~/Library/Android/sdk/tools:$PATH"
 export PATH="~/Library/Android/sdk/platform-tools:$PATH"
