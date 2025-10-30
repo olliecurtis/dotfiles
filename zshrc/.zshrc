@@ -87,7 +87,7 @@ HIST_STAMPS="mm/dd/yyyy"
 
 # ALIAS
 alias brupdate='brew update && brew outdated && brew upgrade && brew outdated --cask && brew upgrade --cask'
-alias cat='bat'
+# alias cat='bat'
 alias osx_temp="/Users/olivercurtis/Downloads/osx-cpu-temp/osx-cpu-temp"
 alias weather-home='curl "wttr.in/London?1F"'
 alias disable-dnd='defaults -currentHost write ~/Library/Preferences/ByHost/com.apple.notificationcenterui doNotDisturb -boolean false && killall NotificationCenter'
@@ -127,36 +127,13 @@ alias docker-start-all='docker start $(docker ps -aq)'
 
 # ===========================================================
 
-# ======================= SKYSCANNER ========================
-
-alias backpack='~/Documents/Backpack'
-
-alias backpack-web='~/Documents/Backpack/backpack'
-alias backpack-web-nuke='backpack && sudo rm -rf backpack/ && git clone --recursive git@github.com:Skyscanner/backpack.git && backpack-web'
-alias update-bpk-deps='npx npm-check-updates -u "/^bpk-.*$/"'
-
-alias backpack-foundations='~/Documents/Backpack/backpack-foundations'
-alias backpack-foundations-nuke='backpack && sudo rm -rf backpack-foundations/ && git clone --recursive git@github.com:Skyscanner/backpack-foundations.git && backpack-foundations'
-
-alias backpack-android='~/Documents/Backpack/backpack-android'
-alias backpack-android-nuke='backpack && sudo rm -rf backpack-android/ && git clone --recursive git@github.com:Skyscanner/backpack-android.git && backpack-android'
-
-alias backpack-ios='~/Documents/Backpack/backpack-ios'
-alias backpack-ios-nuke='backpack && sudo rm -rf backpack-ios/ && git clone --recursive git@github.com:Skyscanner/backpack-ios.git && backpack-ios'
-
-alias brs='backpack && cd backpack-react-scripts'
-alias brs-nuke='backpack && sudo rm -rf backpack-react-scripts/ && git clone --recursive git@github.com:Skyscanner/backpack-react-scripts.git'
-alias brs-setup='brs && (cd packages/react-error-overlay/ && npm i) && (cd packages/react-scripts/ && npm i) && npm i'
-
-# ===========================================================
-
 # Startup to run
 # echo 'Your current operating temperature is:' 
 # osx_temp
 
-export GPG_AGENT_INFO
-GPG_TTY=$(tty)
-export GPG_TTY
+# export GPG_AGENT_INFO
+# GPG_TTY=$(tty)
+# export GPG_TTY
 
 # The next line updates PATH for the Google Cloud SDK.
 # if [ -f '/Users/olivercurtis/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/olivercurtis/google-cloud-sdk/path.zsh.inc'; fi
@@ -165,11 +142,11 @@ export GPG_TTY
 # if [ -f '/Users/olivercurtis/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/olivercurtis/google-cloud-sdk/completion.zsh.inc'; fi
 
 # Python virtualenv setup
-#export PYENV_ROOT="$HOME/.pyenv"
-#export PATH="$PYENV_ROOT/bin:$PATH"
+export PYENV_ROOT="$HOME/.pyenv"
+export PATH="$PYENV_ROOT/bin:$PATH"
 
-eval "$(pyenv init --path)"
-eval "$(pyenv init -)"
+# eval "$(pyenv init --path)"
+# eval "$(pyenv init -)"
 # eval "$(pyenv virtualenv-init -)"
 # export LDFLAGS="-L/usr/local/opt/zlib/lib -L/usr/local/opt/bzip2/lib"
 # export CPPFLAGS="-I/usr/local/opt/zlib/include -I/usr/local/opt/bzip2/include"
@@ -180,8 +157,8 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
 # Setup Android paths
-export ANDROID_HOME="$HOME/Library/Android/sdk"
-export ANDROID_SDK_ROOT="$HOME/Library/Android/sdk"
+# export ANDROID_HOME="$HOME/Library/Android/sdk"
+# export ANDROID_SDK_ROOT="$HOME/Library/Android/sdk"
 
 # Auto switch nvm versions:
 # place this after nvm initialization!
@@ -198,12 +175,11 @@ load-nvmrc() {
 add-zsh-hook chpwd load-nvmrc
 load-nvmrc
 
-export PATH="~/Library/Android/sdk/tools:$PATH"
-export PATH="~/Library/Android/sdk/platform-tools:$PATH"
-export JAVA_HOME="/Applications/Android Studio.app/Contents/jbr/Contents/Home"
+# export PATH="~/Library/Android/sdk/tools:$PATH"
+# export PATH="~/Library/Android/sdk/platform-tools:$PATH"
+# export JAVA_HOME="/Applications/Android Studio.app/Contents/jbr/Contents/Home"
 # export JAVA_HOME="/opt/homebrew/Cellar/openjdk/21.0.2/libexec/openjdk.jdk/Contents/Home"
-
-export PATH="$PATH:/Users/olivercurtis/Library/Python/3.8/bin"
-
-
-eval "$(rbenv init - zsh)"
+export PATH="$PATH:/Users/olivercurtis/.nvm/versions/node/v22.16.0/bin/node"
+export PATH="$PATH:$HOME/.docker/bin"
+# export PATH="$PATH:/Users/olivercurtis/Library/Python/3.8/bin"
+export PATH="/Users/olivercurtis/.local/bin:$PATH"
